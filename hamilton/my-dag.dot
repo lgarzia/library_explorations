@@ -1,0 +1,10 @@
+// Dependency Graph
+digraph {
+	avg_3wk_spend [label=avg_3wk_spend shape=rectangle]
+	signups [label="Input: signups" shape=rectangle style=dashed]
+	spend_per_signup [label=spend_per_signup shape=rectangle]
+	spend [label="Input: spend" shape=rectangle style=dashed]
+	spend -> avg_3wk_spend
+	spend -> spend_per_signup
+	signups -> spend_per_signup
+}

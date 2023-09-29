@@ -58,4 +58,28 @@ Implementation of the Gini coefficient - It's half the relative mean absolute di
 A Gini index of 0 represents perfect equality, while an index of 100 implies perfect inequality
 s commonly recognized that Gini index<0.2 corresponds with perfect income equality, 0.2–0.3 corresponds with relative equality, 0.3–0.4 corresponds with a relatively reasonable income gap, 0.4–0.5 corresponds with high income disparity, above 0.5 
 
+[blog entry](https://anderfernandez.com/en/blog/code-decision-tree-python-from-scratch/)
 
+Intuition - work towards purity
+Cost Function - Gini Index, Entropy
+Gini index = 1 - sum(P(i)^2) <--- Pi - probability of having that class or value
+`1-sum(data.Gender.value_counts(normalize=True)**2)`
+
+The Gini index is simply the Gini coefficient multiplied by 100,
+
+Entropy --- sum(-P(i)*LOG2(pi)) <-- weighted average of information
+`pi = data.Gender.value_counts(normalize=True)`
+`sum(-1*pi*np.log2(pi+1e-9))`
+
+How to choose the cuts:
+This metric indicates the improvement when making different partitions
+* Classification = E(d) - SUM((abs(s)/abs(d))*E(s))
+**Evaluate 'obese' predict gender**
+Eo = Entropy(data['obese'])
+Eo_g_M = Entropy(data['obese'][data['Gender']=='Male'])
+Eo_g_M = Entropy(data['obese'][data['Gender']!='Male'])
+Ig = Eo - (male_count/(male_count+non_male_count))*Eo_g_M - (non_male_count/(male_count+non_male_count))*Eo_g_xM
+
+IDEA: BigQuery --> table: where is the information --> calculate information across columns (extreme ends aren't useful)
+Computer Science 
+... Node, Left, Right, etc... 
