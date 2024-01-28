@@ -1,5 +1,7 @@
+TaskWeaver/pilot_project/project/
 internal_notes/
-
+internal_notes.txt
+TaskWeaver/pilot_project/project/plugins/
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -152,3 +154,5 @@ cython_debug/
 #  and can be added to the global gitignore or merged into this file.  For a more nuclear
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
+
+TaskWeaver/pilot_project/project/taskweaver_config.json
